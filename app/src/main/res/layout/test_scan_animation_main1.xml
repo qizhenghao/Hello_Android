@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+    <Button
+            android:id="@+id/btnStartAnim"
+            android:text="btnStartAnim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:onClick="onClick"/>
+    <Button
+            android:id="@+id/btnEndAnim"
+            android:text="btnEndAnim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:onClick="onClick"/>
+
+    <com.bruce.android.knowledges.costomviews.scanAnimation.AnimationSurfaceView
+            android:id="@+id/surfaceView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+
+        ></com.bruce.android.knowledges.costomviews.scanAnimation.AnimationSurfaceView>
+</LinearLayout>
+

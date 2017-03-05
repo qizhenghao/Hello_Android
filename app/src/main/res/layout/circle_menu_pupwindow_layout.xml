@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:background="@drawable/rounded_white_bg"
+        android:layout_height="100dp">
+        <com.bruce.android.knowledges.costomviews.CircleMenuLayout
+            android:id="@+id/id_menulayout"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            >
+
+            <!--<RelativeLayout-->
+            <!--android:id="@+id/id_circle_menu_item_center"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" >-->
+
+            <!--<ImageView-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_width="104.0dip"-->
+            <!--android:layout_height="104.0dip"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:background="@drawable/ic_launcher" />-->
+
+            <!--<ImageView-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_width="116.0dip"-->
+            <!--android:layout_height="116.0dip"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:background="@drawable/ic_launcher" />-->
+            <!--</RelativeLayout>-->
+        </com.bruce.android.knowledges.costomviews.CircleMenuLayout>
+
+        <ImageView
+            android:id="@+id/circle_menu_like_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/newsfeed_float_like_red_normal"/>
+        <ImageView
+            android:id="@+id/circle_menu_enter_iv"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/menu_more"/>
+        <ImageView
+            android:id="@+id/circle_menu_default_iv"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="26dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/menu_enter_shop"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bruce.android.knowledges"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-sdk android:minSdkVersion="14" />
+    <application
+        android:name=".base.KnowApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/app_theme">
+        <activity
+            android:name=".DeskTopActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activities.TestShaderActivity"></activity>
+        <activity android:name=".Activities.CanvasActivity"></activity>
+        <activity android:name=".Activities.TestCustomViewGroupActivity"></activity>
+        <activity android:name=".Activities.TestFlowLayoutActivity"></activity>
+        <activity android:name=".Activities.TextViewLinkActivity"></activity>
+        <activity android:name=".Activities.TestRotationTextViewActivity"></activity>
+        <activity android:name=".Activities.TestTransformMatrixActivity"></activity>
+        <activity android:name=".Activities.TestSingleTouchActivity"></activity>
+        <activity android:name=".Activities.TestCosAnimationActivity"></activity>
+        <activity android:name=".Activities.TestSlideViewPagerActivity"></activity>
+        <activity android:name=".Activities.TestCircleMenuActivity"></activity>
+        <activity android:name=".Activities.TestMultiImageViewActivity"></activity>
+        <activity android:name=".Activities.InternetVideoActivity"></activity>
+        <activity android:name=".Activities.TestLineViewActivity"></activity>
+        <activity android:name=".Activities.TestClipActivity"></activity>
+        <activity android:name=".Activities.TestImageViewActivity"></activity>
+        <activity android:name=".costomviews.scanAnimation.ParabolaAnimationActivity"></activity>
+        <activity android:name=".costomviews.scanAnimation.ScanAnimationActivity"></activity>
+        <activity android:name=".costomviews.TweenAnimation.TestTweenAnimationActivity"></activity>
+        <activity android:name=".costomviews.pinnedHeaderListView.TestPinnedHeaderListviewActivity"></activity>
+        <activity android:name=".services.ServiceTestActivity"/>
+        <activity android:name=".net.demo.TestHttpActivity"/>
+        <activity android:name=".Activities.processTest.TestProcessActivity"/>
+        <activity android:name=".Activities.processTest.Process1Activity"
+            android:process=":process_1"/>
+        <activity android:name=".Activities.processTest.Process2Activity"
+                  android:process=":process_2"/>
+        <activity android:name=".Activities.processTest.Process3Activity"
+                  android:process=":process_3"/>
+        <activity android:name=".Activities.processTest.Process4Activity"
+                  android:process=":process_4"/>
+        <activity android:name=".Activities.processTest.Process5Activity"
+                  android:process=":process_5"/>
+        <activity android:name=".Activities.processTest.Process6Activity"
+                  android:process=":process_6"/>
+
+
+        <service android:name=".services.MyService">
+            <intent-filter>
+                <action android:name="com.test.SERVICE_TEST"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:layout_gravity="center_horizontal"
+        >
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <Button
+                android:id="@+id/alphaAnimation"
+                android:text="alpha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:onClick="onClick"/>
+
+        <Button
+                android:id="@+id/rotateAnimation"
+                android:text="rotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:onClick="onClick"/>
+
+        <Button
+                android:id="@+id/translateAnimation"
+                android:text="translate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:onClick="onClick"/>
+        <Button
+                android:id="@+id/animation_set"
+                android:text="set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:onClick="onClick"/>
+
+    </LinearLayout>
+
+    <Button
+            android:id="@+id/scaleAnimation"
+            android:text="scaleAnimation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:onClick="onClick"/>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:layout_marginTop="20dp"
+                android:id="@+id/welcome_main_no_medicine_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="invisible"
+                android:src="@drawable/welcome_no_medicine_iv"/>
+
+        <ImageView
+                android:layout_marginTop="55dp"
+                android:id="@+id/welcome_main_girl_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="95dp"
+                android:visibility="invisible"
+                android:src="@drawable/welcome_girl_iv"/>
+
+        <ImageView
+                android:layout_marginTop="120dp"
+                android:id="@+id/welcome_main_dog_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:visibility="invisible"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/welcome_dog_iv"/>
+
+        <ImageView
+                android:layout_marginTop="60dp"
+                android:id="@+id/welcome_main_baobeier_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="95dp"
+                android:visibility="invisible"
+                android:src="@drawable/welcome_baobeier_iv"/>
+        <ImageView
+                android:layout_marginTop="120dp"
+                android:id="@+id/welcome_main_yanzhi_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="invisible"
+                android:src="@drawable/welcome_yanzhi"/>
+
+        <com.bruce.android.knowledges.costomviews.scanAnimation.AnimationSurfaceView
+                android:layout_marginTop="165dp"
+                android:id="@+id/welcome_main_scan_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+
+    </FrameLayout>
+
+
+</LinearLayout>
+

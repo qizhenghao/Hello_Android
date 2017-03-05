@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:multi="http://schemas.android.com/apk/res/com.bruce.android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@android:color/black"
+    android:orientation="vertical" >
+
+    <com.bruce.android.knowledges.costomviews.NewsfeedShareMultiImageView
+        android:id="@+id/test_multi_iv"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+       />
+
+</LinearLayout>

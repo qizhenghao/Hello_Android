@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="app_theme" parent="@android:style/Theme.Light.NoTitleBar">
+        <!--<item name="android:background">@color/white</item>-->
+    </style>
+    <style name="text_flag_01">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/flag_01</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <declare-styleable name="SingleTouchView">
+        <attr name="src" format="reference" />            <!-- 用于缩放旋转的图标 -->
+        <attr name="editable" format="boolean"/>          <!-- 是否处于可编辑状态 -->
+        <attr name="frameColor" format="color" />         <!-- 边框颜色 -->
+        <attr name="frameWidth" format="dimension" />     <!-- 边框线宽度 -->
+        <attr name="framePadding" format="dimension" />   <!-- 边框与图片的间距 -->
+        <attr name="degree" format="float" />             <!-- 旋转角度 -->
+        <attr name="scale" format="float" />              <!-- 缩放比例 -->
+        <attr name="controlDrawable" format="reference"/> <!-- 控制图标 -->
+        <attr name="controlLocation">                     <!-- 控制图标的位置 -->
+            <enum name="left_top" value="0" />
+            <enum name="right_top" value="1" />
+            <enum name="right_bottom" value="2" />
+            <enum name="left_bottom" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="RoundedImageView">
+        <attr name="riv_corner_radius" format="dimension"/>
+        <attr name="riv_border_width" format="dimension"/>
+        <attr name="riv_border_color" format="color"/>
+        <attr name="riv_mutate_background" format="boolean"/>
+        <attr name="riv_oval" format="boolean"/>
+        <attr name="android:scaleType"/>
+        <attr name="riv_tile_mode">
+            <enum name="clamp" value="0"/>
+            <enum name="repeat" value="1"/>
+            <enum name="mirror" value="2"/>
+        </attr>
+        <attr name="riv_tile_mode_x">
+            <enum name="clamp" value="0"/>
+            <enum name="repeat" value="1"/>
+            <enum name="mirror" value="2"/>
+        </attr>
+        <attr name="riv_tile_mode_y">
+            <enum name="clamp" value="0"/>
+            <enum name="repeat" value="1"/>
+            <enum name="mirror" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="AccelerationProgress">
+        <attr name="accBallRadius" format="dimension"/>
+        <attr name="bigCircleStroke" format="dimension"/>
+        <attr name="accBallBackground" format="color"/>
+        <attr name="bigCircleBackground" format="color"/>
+        <attr name="duration" format="integer"/>
+        <attr name="timeTextSize" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="SlidProgressbar">
+        <attr name="orientation" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+        <attr name="progressWidth" format="dimension"/>
+        <attr name="progressHeight" format="dimension"/>
+        <attr name="thumbRadius" format="dimension"/>
+        <attr name="thumbTextSize" format="dimension"/>
+        <attr name="thumbText" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="ScaleViewPager">
+        <attr name="marginLeftRight" format="dimension"/>
+        <attr name="gutterSize" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="RefreshProgress">
+        <attr name="seekAble" format="boolean"/>
+    </declare-styleable>
+
+    <style name="Animations_BottomPush">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+    <style name="Animations_PopUpMenu_Right">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_bottomright_to_topleft</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_topleft_to_bottomright</item>
+    </style>
+
+    <declare-styleable name="MultiImageView">
+        <attr name="width" format="dimension" />
+        <attr name="countTextSize" format="dimension" />
+        <attr name="iconScale" format="float" />
+        <attr name="src_" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="TopRoundedImageView">
+        <attr name="top_corner_radius" format="dimension"/>
+    </declare-styleable>
+
+    <!--************************************* progressbar **********************************-->
+    <style name="progressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDuration">1000</item>
+        <item name="android:indeterminateDrawable">@drawable/progress_bar_anim</item>
+    </style>
+</resources>

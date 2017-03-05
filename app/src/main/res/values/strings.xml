@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android_Knowledges</string>
+    <string name="action_email">"发送邮件"</string>
+    <string name="action_phone">"拨打电话"</string>
+    <string name="live_video_need_bind_idcard">
+        <![CDATA[
+        根据相关规定<br/>网络主播必须通过<font color=#3CA3E4>实名认证</font>才可发布直播。
+        ]]>
+    </string>
+
+    <string name="first_tab">Frist</string>
+    <string name="second_tab">Second</string>
+    <string name="third_tab">Third</string>
+</resources>

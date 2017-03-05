@@ -1,0 +1,35 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Hello World! in SP" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Hello World! in DP" />
+    </LinearLayout>
+
+    <com.bruce.android.knowledges.costomviews.SingleTouchView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/SingleTouchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:scale="1.2"
+            app:src="@drawable/qq"
+            app:frameColor="#0022ff"
+            app:controlLocation="right_top"/>
+
+</FrameLayout>
