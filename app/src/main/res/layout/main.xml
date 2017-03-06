@@ -23,7 +23,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="2dp"
             android:onClick="onClick"
-            android:text="http_demo"/>
+            android:text="HTTP"/>
         <Button
             android:id="@+id/service_demo"
             android:layout_width="match_parent"
