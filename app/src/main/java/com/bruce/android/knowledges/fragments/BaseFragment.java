@@ -16,6 +16,8 @@ import com.bruce.android.knowledges.R;
 import com.bruce.android.knowledges.listeners.OnRefreshFragmentListener;
 import com.bruce.android.knowledges.listeners.OnTabItemClickListener;
 
+import butterknife.ButterKnife;
+
 
 /**
  * @author qizhenghao
@@ -40,6 +42,7 @@ public abstract class BaseFragment extends Fragment {
         mContentView = inflater.inflate(getLayoutId(), null);
         if (mContentView == null)
             throw new RuntimeException("继承BaseFragment的子类: " + getClass().getName() + "，需要在 getLayoutId() 中指定正确的id");
+        ButterKnife.bind(this, mContentView);
         return mContentView;
     }
 
