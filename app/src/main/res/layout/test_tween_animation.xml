@@ -102,7 +102,7 @@
                 android:visibility="invisible"
                 android:src="@drawable/welcome_yanzhi"/>
 
-        <com.bruce.android.knowledges.costomviews.scanAnimation.AnimationSurfaceView
+        <com.bruce.android.knowledge.custom_view.scanAnimation.AnimationSurfaceView
                 android:layout_marginTop="165dp"
                 android:id="@+id/welcome_main_scan_iv"
                 android:layout_width="wrap_content"

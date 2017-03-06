@@ -19,11 +19,11 @@
             android:layout_marginTop="2dp"
             android:onClick="onClick"/>
 
-    <com.bruce.android.knowledges.costomviews.scanAnimation.AnimationSurfaceView
+    <com.bruce.android.knowledge.custom_view.scanAnimation.AnimationSurfaceView
             android:id="@+id/surfaceView"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
 
-        ></com.bruce.android.knowledges.costomviews.scanAnimation.AnimationSurfaceView>
+        ></com.bruce.android.knowledge.custom_view.scanAnimation.AnimationSurfaceView>
 </LinearLayout>
 

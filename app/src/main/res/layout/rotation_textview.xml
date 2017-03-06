@@ -44,8 +44,9 @@
         </LinearLayout>
     <!--</FrameLayout>-->
 
-    <com.bruce.android.knowledges.costomviews.DrawTextStudy android:layout_width="wrap_content"
-                                                            android:layout_height="wrap_content"/>
+    <com.bruce.android.knowledge.custom_view.DrawTextStudy
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <ListView
             android:id="@+id/roatation_textview_lv"

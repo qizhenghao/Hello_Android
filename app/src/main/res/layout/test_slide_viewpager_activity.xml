@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.bruce.android.knowledges.costomviews.SlideViewPager
+    <com.bruce.android.knowledge.custom_view.SlideViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="400dp"
@@ -43,7 +43,7 @@
             android:gravity="center"
             android:text="ViewPager Four"
             android:textSize="18sp" />
-    </com.bruce.android.knowledges.costomviews.SlideViewPager>
+    </com.bruce.android.knowledge.custom_view.SlideViewPager>
 
     <!--<LinearLayout-->
         <!--android:layout_width="match_parent"-->

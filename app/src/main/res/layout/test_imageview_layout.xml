@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <com.bruce.android.knowledges.costomviews.TopRoundedImageView
+    <com.bruce.android.knowledge.custom_view.TopRoundedImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/qq"

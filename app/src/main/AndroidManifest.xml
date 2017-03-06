@@ -1,63 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bruce.android.knowledges"
+    package="com.bruce.android.knowledge"
     android:versionCode="1"
     android:versionName="1.0">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-sdk android:minSdkVersion="14" />
+    <uses-permission android:name="com.bruce.android.knowledge.MY_SERVICE_PERMISSION"/>
+
     <application
-        android:name=".base.KnowApplication"
+        android:name="com.bruce.android.knowledge.base.KnowApplication"
         android:icon="@drawable/ic_launcher"
+        android:allowBackup="true"
         android:label="@string/app_name"
         android:theme="@style/app_theme">
         <activity
-            android:name=".DeskTopActivity"
+            android:name="com.bruce.android.knowledge.DeskTopActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.TestShaderActivity"></activity>
-        <activity android:name=".Activities.CanvasActivity"></activity>
-        <activity android:name=".Activities.TestCustomViewGroupActivity"></activity>
-        <activity android:name=".Activities.TestFlowLayoutActivity"></activity>
-        <activity android:name=".Activities.TextViewLinkActivity"></activity>
-        <activity android:name=".Activities.TestRotationTextViewActivity"></activity>
-        <activity android:name=".Activities.TestTransformMatrixActivity"></activity>
-        <activity android:name=".Activities.TestSingleTouchActivity"></activity>
-        <activity android:name=".Activities.TestCosAnimationActivity"></activity>
-        <activity android:name=".Activities.TestSlideViewPagerActivity"></activity>
-        <activity android:name=".Activities.TestCircleMenuActivity"></activity>
-        <activity android:name=".Activities.TestMultiImageViewActivity"></activity>
-        <activity android:name=".Activities.InternetVideoActivity"></activity>
-        <activity android:name=".Activities.TestLineViewActivity"></activity>
-        <activity android:name=".Activities.TestClipActivity"></activity>
-        <activity android:name=".Activities.TestImageViewActivity"></activity>
-        <activity android:name=".costomviews.scanAnimation.ParabolaAnimationActivity"></activity>
-        <activity android:name=".costomviews.scanAnimation.ScanAnimationActivity"></activity>
-        <activity android:name=".costomviews.TweenAnimation.TestTweenAnimationActivity"></activity>
-        <activity android:name=".costomviews.pinnedHeaderListView.TestPinnedHeaderListviewActivity"></activity>
-        <activity android:name=".services.ServiceTestActivity"/>
-        <activity android:name=".net.demo.TestHttpActivity"/>
-        <activity android:name=".Activities.processTest.TestProcessActivity"/>
-        <activity android:name=".Activities.processTest.Process1Activity"
+        <activity android:name="com.bruce.android.knowledge.activities.TestShaderActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.CanvasActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestCustomViewGroupActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestFlowLayoutActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TextViewLinkActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestRotationTextViewActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestTransformMatrixActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestSingleTouchActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestCosAnimationActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestSlideViewPagerActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestCircleMenuActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestMultiImageViewActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.InternetVideoActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestLineViewActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestClipActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.TestImageViewActivity"/>
+        <activity android:name="com.bruce.android.knowledge.custom_view.scanAnimation.ParabolaAnimationActivity"/>
+        <activity android:name="com.bruce.android.knowledge.custom_view.scanAnimation.ScanAnimationActivity"/>
+        <activity android:name="com.bruce.android.knowledge.custom_view.tween_animation.TestTweenAnimationActivity"/>
+        <activity android:name="com.bruce.android.knowledge.custom_view.pinnedHeaderListView.TestPinnedHeaderListViewActivity"/>
+        <activity android:name="com.bruce.android.knowledge.services.ServiceTestActivity"/>
+        <activity android:name="com.bruce.android.knowledge.net.demo.TestHttpActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.processTest.TestProcessActivity"/>
+        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process1Activity"
             android:process=":process_1"/>
-        <activity android:name=".Activities.processTest.Process2Activity"
+        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process2Activity"
                   android:process=":process_2"/>
-        <activity android:name=".Activities.processTest.Process3Activity"
+        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process3Activity"
                   android:process=":process_3"/>
-        <activity android:name=".Activities.processTest.Process4Activity"
+        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process4Activity"
                   android:process=":process_4"/>
-        <activity android:name=".Activities.processTest.Process5Activity"
+        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process5Activity"
                   android:process=":process_5"/>
-        <activity android:name=".Activities.processTest.Process6Activity"
+        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process6Activity"
                   android:process=":process_6"/>
 
 
-        <service android:name=".services.MyService">
+        <service android:name="com.bruce.android.knowledge.services.MyService"
+                 android:permission="com.bruce.android.knowledge.MY_SERVICE_PERMISSION">
             <intent-filter>
                 <action android:name="com.test.SERVICE_TEST"/>
             </intent-filter>

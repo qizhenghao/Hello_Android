@@ -6,7 +6,7 @@
         android:layout_width="100dp"
         android:background="@drawable/rounded_white_bg"
         android:layout_height="100dp">
-        <com.bruce.android.knowledges.costomviews.CircleMenuLayout
+        <com.bruce.android.knowledge.custom_view.CircleMenuLayout
             android:id="@+id/id_menulayout"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -31,7 +31,7 @@
             <!--android:layout_centerInParent="true"-->
             <!--android:background="@drawable/ic_launcher" />-->
             <!--</RelativeLayout>-->
-        </com.bruce.android.knowledges.costomviews.CircleMenuLayout>
+        </com.bruce.android.knowledge.custom_view.CircleMenuLayout>
 
         <ImageView
             android:id="@+id/circle_menu_like_iv"

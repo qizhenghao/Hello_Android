@@ -7,7 +7,7 @@
               android:background="#E1E6F6"
               android:orientation="vertical" >
 
-    <com.bruce.android.knowledges.costomviews.FlowLayout
+    <com.bruce.android.knowledge.custom_view.FlowLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
@@ -38,10 +38,10 @@
         <TextView
                 style="@style/text_flag_01"
                 android:text="I thick i can" />
-    </com.bruce.android.knowledges.costomviews.FlowLayout>
+    </com.bruce.android.knowledge.custom_view.FlowLayout>
 
 
-    <com.bruce.android.knowledges.costomviews.FlowLayout
+    <com.bruce.android.knowledge.custom_view.FlowLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp" >
@@ -87,9 +87,9 @@
                 android:background="@drawable/flag_02"
                 android:text="I thick i can"
                 android:textColor="#888888" />
-    </com.bruce.android.knowledges.costomviews.FlowLayout>
+    </com.bruce.android.knowledge.custom_view.FlowLayout>
 
-    <com.bruce.android.knowledges.costomviews.FlowLayout
+    <com.bruce.android.knowledge.custom_view.FlowLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp" >
@@ -135,6 +135,6 @@
                 android:background="@drawable/flag_03"
                 android:text="I thick i can"
                 android:textColor="#43BBE7" />
-    </com.bruce.android.knowledges.costomviews.FlowLayout>
+    </com.bruce.android.knowledge.custom_view.FlowLayout>
 
 </LinearLayout>

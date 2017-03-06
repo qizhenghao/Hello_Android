@@ -5,7 +5,7 @@
               android:fitsSystemWindows="true"
               android:orientation="vertical">
 
-    <com.bruce.android.knowledges.costomviews.desktop.DesktopTabHost
+    <com.bruce.android.knowledge.custom_view.desktop.DesktopTabHost
         android:id="@+id/tab_page_indicator"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
@@ -69,13 +69,13 @@
             android:layout_marginTop="3dp"
             android:background="@color/common_divider"/>
 
-        <com.bruce.android.knowledges.costomviews.desktop.LineViewPagerIndicator
+        <com.bruce.android.knowledge.custom_view.desktop.LineViewPagerIndicator
             android:id="@+id/tab_line_layout"
             android:layout_width="fill_parent"
             android:layout_height="3dp"
             android:layout_below="@id/tab_text_layout">
-        </com.bruce.android.knowledges.costomviews.desktop.LineViewPagerIndicator>
-    </com.bruce.android.knowledges.costomviews.desktop.DesktopTabHost>
+        </com.bruce.android.knowledge.custom_view.desktop.LineViewPagerIndicator>
+    </com.bruce.android.knowledge.custom_view.desktop.DesktopTabHost>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"

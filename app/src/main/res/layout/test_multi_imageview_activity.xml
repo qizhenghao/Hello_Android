@@ -7,7 +7,7 @@
     android:background="@android:color/black"
     android:orientation="vertical" >
 
-    <com.bruce.android.knowledges.costomviews.NewsfeedShareMultiImageView
+    <com.bruce.android.knowledge.custom_view.NewsfeedShareMultiImageView
         android:id="@+id/test_multi_iv"
         android:layout_width="200dp"
         android:layout_height="200dp"

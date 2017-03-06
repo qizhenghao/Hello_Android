@@ -5,12 +5,12 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent">
 
-    <com.bruce.android.knowledges.costomviews.pinnedHeaderListView.PinnedHeaderListView
+    <com.bruce.android.knowledge.custom_view.pinnedHeaderListView.PinnedHeaderListView
             android:id="@+id/pinnedListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/white">
 
-    </com.bruce.android.knowledges.costomviews.pinnedHeaderListView.PinnedHeaderListView>
+    </com.bruce.android.knowledge.custom_view.pinnedHeaderListView.PinnedHeaderListView>
 
 </LinearLayout>

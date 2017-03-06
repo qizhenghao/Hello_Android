@@ -22,7 +22,7 @@
             android:text="Hello World! in DP" />
     </LinearLayout>
 
-    <com.bruce.android.knowledges.costomviews.SingleTouchView
+    <com.bruce.android.knowledge.custom_view.SingleTouchView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/SingleTouchView"
             android:layout_width="match_parent"

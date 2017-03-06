@@ -6,7 +6,7 @@
               android:orientation="vertical"
               tools:context=".MainActivity">
 
-    <com.bruce.android.knowledges.costomviews.LineView
+    <com.bruce.android.knowledge.custom_view.LineView
         android:id="@+id/lineView"
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -14,7 +14,7 @@
         android:layout_marginTop="100dp"
         android:background="@android:color/holo_green_light"/>
 
-    <com.bruce.android.knowledges.costomviews.LineView
+    <com.bruce.android.knowledge.custom_view.LineView
         android:id="@+id/lineView1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
