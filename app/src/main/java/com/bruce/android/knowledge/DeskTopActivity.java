@@ -1,12 +1,17 @@
 package com.bruce.android.knowledge;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 
@@ -53,6 +58,29 @@ public class DeskTopActivity extends FragmentActivity implements View.OnClickLis
         Log.d("Bruce", "Runtime.getRuntime().availableProcessors(): " + Runtime.getRuntime().availableProcessors());
         currTime = System.currentTimeMillis();
         initData();
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        Display display = getWindowManager().getDefaultDisplay();
+        display.getMetrics(displayMetrics);
+        Log.d("Bruce", displayMetrics.density + ", " + displayMetrics.densityDpi);
+        Log.d("Bruce", display.getWidth() + ", " + display.getHeight());
+
+        int id = R.drawable.ic_launcher;
+        BitmapFactory.Options options = new BitmapFactory.Options();
+//        Bitmap result1 = BitmapFactory.decodeResource(getResources(), id, options);
+//        Log.d("Bruce", result1.getWidth() + ", " + result1.getHeight());
+//
+//        options.inJustDecodeBounds = true;
+//        BitmapFactory.decodeResource(getResources(), id, options);
+//        Log.d("Bruce", options.outWidth + ", " + options.outHeight);
+
+        options.inSampleSize = 4;
+        options.inJustDecodeBounds = false;
+//        options.inDensity = DisplayMetrics.DENSITY_XHIGH;
+//        options.inTargetDensity = DisplayMetrics.DENSITY_XHIGH;
+        Resources resources = getResources();
+        Bitmap result = BitmapFactory.decodeResource(resources, id, options);
+        Log.d("Bruce", result.getWidth() + ", " + result.getHeight());
     }
 
     @Override
