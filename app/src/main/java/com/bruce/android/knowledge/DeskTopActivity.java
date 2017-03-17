@@ -1,6 +1,8 @@
 package com.bruce.android.knowledge;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -172,4 +174,12 @@ public class DeskTopActivity extends FragmentActivity implements View.OnClickLis
     public void onTabItemSelected(int index, Bundle args) {
 
     }
+
+
+    BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+        }
+    };
 }
