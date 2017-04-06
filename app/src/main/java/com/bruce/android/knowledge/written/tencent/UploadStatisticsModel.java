@@ -1,15 +1,20 @@
 package com.bruce.android.knowledge.written.tencent;
 
 import android.os.Handler;
-import android.os.Looper;
+import android.os.HandlerThread;
+import android.os.Process;
 
-public class UploadStatisticsModel implements Runnable{
+public class UploadStatisticsModel extends HandlerThread {
+    private static String TAG = "UploadStatisticsModel";
+
     private static Object lock = new Object();//锁
     private Handler handler = null;
     private static UploadStatisticsModel instance = null;
 
     private UploadStatisticsModel() {
-        new Thread(this).start();
+        super(TAG, Process.THREAD_PRIORITY_BACKGROUND);
+        start();
+        handler = new Handler(getLooper());
     }
 
     private static UploadStatisticsModel getInstance() {
@@ -38,15 +43,6 @@ public class UploadStatisticsModel implements Runnable{
                 //将上传任务加到HTTP任务队列
             }
         }, delayed);
-    }
-
-    @Override
-    public void run() {
-        Looper.prepare();
-        if (handler == null) {
-            handler = new Handler(Looper.myLooper());
-        }
-        Looper.loop();
     }
 
     public class StatisticsBean {
