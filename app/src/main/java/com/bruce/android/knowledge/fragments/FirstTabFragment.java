@@ -23,6 +23,7 @@ import com.bruce.android.knowledge.activities.TestTransformMatrixActivity;
 import com.bruce.android.knowledge.activities.TextViewLinkActivity;
 import com.bruce.android.knowledge.activities.processTest.TestProcessActivity;
 import com.bruce.android.knowledge.R;
+import com.bruce.android.knowledge.animation.property.PropertyAnimationUtils;
 import com.bruce.android.knowledge.costomviewdemos.DemoPopupWindow;
 import com.bruce.android.knowledge.custom_view.tween_animation.TestTweenAnimationActivity;
 import com.bruce.android.knowledge.custom_view.pinnedHeaderListView.TestPinnedHeaderListViewActivity;
@@ -71,6 +72,9 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.first_tab_inner_fragment, new WebView_JS_Fragment());
                 transaction.commit();
+//                PropertyAnimationUtils.startAnimator(view);
+//                PropertyAnimationUtils.startAnimator1(view);
+                PropertyAnimationUtils.startAnimator2(view);
                 break;
             case R.id.process_test:
                 startActivity(new Intent(mContext, TestProcessActivity.class));
