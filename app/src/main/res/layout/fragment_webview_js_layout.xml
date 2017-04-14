@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/native2H5_btn"
+        android:layout_gravity="center_horizontal"
+        android:text="Native调用H5的js方法"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"/>
+    <WebView
+        android:id="@+id/fragment_webview_js_wb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </WebView>
+</LinearLayout>

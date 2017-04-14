@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Invalid url = http://bitkiller.duapp.com/jsobj.html"/>
+
+    <Button
+        android:id="@+id/action_load"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:text="load"
+        android:layout_below="@id/textview"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/action_refresh"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:text="refresh"
+        android:layout_below="@id/textview"
+        android:layout_toRightOf="@id/action_load"
+        android:gravity="center"/>
+    <com.bruce.android.knowledge.fragments.webview_ex.WebViewEx
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/action_load"/>
+
+</RelativeLayout>

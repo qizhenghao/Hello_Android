@@ -1,6 +1,7 @@
 package com.bruce.android.knowledge.fragments;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.View;
 
@@ -27,6 +28,7 @@ import com.bruce.android.knowledge.custom_view.tween_animation.TestTweenAnimatio
 import com.bruce.android.knowledge.custom_view.pinnedHeaderListView.TestPinnedHeaderListViewActivity;
 import com.bruce.android.knowledge.custom_view.scanAnimation.ParabolaAnimationActivity;
 import com.bruce.android.knowledge.custom_view.scanAnimation.ScanAnimationActivity;
+import com.bruce.android.knowledge.fragments.test.WebView_JS_Fragment;
 import com.bruce.android.knowledge.net.demo.TestHttpActivity;
 import com.bruce.android.knowledge.services.ServiceTestActivity;
 
@@ -62,9 +64,14 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
 
     }
 
-    @OnClick({R.id.process_test, R.id.http_demo, R.id.service_demo, R.id.main_open_test_ImageView_btn, R.id.main_open_test_pinned_btn, R.id.main_open_test_clip_btn, R.id.main_open_test_lineview_btn, R.id.main_open_test_VideoView_btn, R.id.main_open_test_muti_iv_btn, R.id.main_open_test_CircleMenu_btn, R.id.main_open_test_slideviewpager_btn, R.id.main_open_test_popupwindow_dialog_btn, R.id.main_open_test_tween_animation_btn, R.id.main_open_test_shader_btn, R.id.main_open_test_canvas_btn, R.id.main_open_test_custom_viewgroup_btn, R.id.main_open_test_flowlayout_btn, R.id.main_open_textviewlink_btn, R.id.main_open_rotation_text_btn, R.id.main_open_transform_matrix_btn, R.id.main_open_single_touch_btn, R.id.main_open_cos_animation_btn, R.id.main_open_scan_animation1_btn, R.id.main_open_scan_animation_btn})
+    @OnClick({R.id.webView_js, R.id.process_test, R.id.http_demo, R.id.service_demo, R.id.main_open_test_ImageView_btn, R.id.main_open_test_pinned_btn, R.id.main_open_test_clip_btn, R.id.main_open_test_lineview_btn, R.id.main_open_test_VideoView_btn, R.id.main_open_test_muti_iv_btn, R.id.main_open_test_CircleMenu_btn, R.id.main_open_test_slideviewpager_btn, R.id.main_open_test_popupwindow_dialog_btn, R.id.main_open_test_tween_animation_btn, R.id.main_open_test_shader_btn, R.id.main_open_test_canvas_btn, R.id.main_open_test_custom_viewgroup_btn, R.id.main_open_test_flowlayout_btn, R.id.main_open_textviewlink_btn, R.id.main_open_rotation_text_btn, R.id.main_open_transform_matrix_btn, R.id.main_open_single_touch_btn, R.id.main_open_cos_animation_btn, R.id.main_open_scan_animation1_btn, R.id.main_open_scan_animation_btn})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.webView_js:
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.first_tab_inner_fragment, new WebView_JS_Fragment());
+                transaction.commit();
+                break;
             case R.id.process_test:
                 startActivity(new Intent(mContext, TestProcessActivity.class));
                 break;

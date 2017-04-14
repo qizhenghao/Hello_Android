@@ -57,7 +57,7 @@
                   android:process=":process_5"/>
         <activity android:name="com.bruce.android.knowledge.activities.processTest.Process6Activity"
                   android:process=":process_6"/>
-
+        <activity android:name=".fragments.webview_ex.WebViewExActivity"/>
 
         <service android:name="com.bruce.android.knowledge.services.MyService"
                  android:permission="com.bruce.android.knowledge.MY_SERVICE_PERMISSION">
