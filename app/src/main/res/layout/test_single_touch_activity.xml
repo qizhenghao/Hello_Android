@@ -1,9 +1,9 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.bruce.android.knowledge.custom_view.TestFrameLayout_1 xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="wrap_content">
 
-    <LinearLayout
+    <com.bruce.android.knowledge.custom_view.TestLinearLayout_1
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:layout_height="wrap_content"
@@ -20,9 +20,12 @@
             android:layout_height="wrap_content"
             android:textSize="18dp"
             android:text="Hello World! in DP" />
-    </LinearLayout>
+    </com.bruce.android.knowledge.custom_view.TestLinearLayout_1>
 
-    <com.bruce.android.knowledge.custom_view.SingleTouchView
+    <com.bruce.android.knowledge.custom_view.TestFrameLayout_2
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.bruce.android.knowledge.custom_view.SingleTouchView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/SingleTouchView"
             android:layout_width="match_parent"
@@ -31,5 +34,6 @@
             app:src="@drawable/qq"
             app:frameColor="#0022ff"
             app:controlLocation="right_top"/>
+    </com.bruce.android.knowledge.custom_view.TestFrameLayout_2>
 
-</FrameLayout>
+</com.bruce.android.knowledge.custom_view.TestFrameLayout_1>

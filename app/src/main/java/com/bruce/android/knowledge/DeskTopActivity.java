@@ -113,15 +113,6 @@ public class DeskTopActivity extends FragmentActivity implements View.OnClickLis
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         desktopTabHost = (DesktopTabHost) findViewById(R.id.tab_page_indicator);
         desktopTabHost.setViewIds(new int[]{R.id.tab_line_layout, R.id.tab_one, R.id.tab_two, R.id.tab_three});
-        final Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                Log.d("Bruce", "uptimeMillis = " + SystemClock.uptimeMillis() + "");
-                handler.postAtTime(this, SystemClock.uptimeMillis() + 5*1000);
-            }
-        };
-        handler.postAtTime(runnable, SystemClock.uptimeMillis() + 5*1000);
     }
 
 

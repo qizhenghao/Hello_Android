@@ -20,6 +20,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
@@ -290,15 +291,17 @@ public class SingleTouchView extends View {
 		if(mViewPaddingLeft != newPaddingLeft || mViewPaddingTop != newPaddingTop){
 			mViewPaddingLeft = newPaddingLeft;
 			mViewPaddingTop = newPaddingTop;
-			
-//			layout(newPaddingLeft, newPaddingTop, newPaddingLeft + actualWidth, newPaddingTop + actualHeight);
 		}
 		
 		layout(newPaddingLeft, newPaddingTop, newPaddingLeft + actualWidth, newPaddingTop + actualHeight);
-	}
-	
-	
-	/**
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        Log.d("Bruce", "my layout");
+    }
+
+    /**
 	 * 设置旋转图
 	 * @param bitmap
 	 */
@@ -363,7 +366,7 @@ public class SingleTouchView extends View {
 	protected void onDraw(Canvas canvas) {
 		//每次draw之前调整View的位置和大小
 		super.onDraw(canvas);
-		
+        Log.d("Bruce", "my onDraw");
 		if(mBitmap == null) return;
 		canvas.drawBitmap(mBitmap, matrix, mPaint);
 		
@@ -371,7 +374,7 @@ public class SingleTouchView extends View {
 		//处于可编辑状态才画边框和控制图标
 		if(isEditable){
 			mPath.reset();
-			mPath.moveTo(mLTPoint.x, mLTPoint.y);
+			mPath.moveTo(mLTPoint.x, mLTPoint.y);//设置起点
 			mPath.lineTo(mRTPoint.x, mRTPoint.y);
 			mPath.lineTo(mRBPoint.x, mRBPoint.y);
 			mPath.lineTo(mLBPoint.x, mLBPoint.y);
@@ -387,8 +390,6 @@ public class SingleTouchView extends View {
 		}
 		
 		adjustLayout();
-		
-		
 	}
 	
 	
@@ -420,9 +421,7 @@ public class SingleTouchView extends View {
 		switch (event.getAction() ) {
 		case MotionEvent.ACTION_DOWN:
 			mPreMovePointF.set(event.getX() + mViewPaddingLeft, event.getY() + mViewPaddingTop);
-			
 			mStatus = JudgeStatus(event.getX(), event.getY());
-
 			break;
 		case MotionEvent.ACTION_UP:
 			mStatus = STATUS_INIT;
