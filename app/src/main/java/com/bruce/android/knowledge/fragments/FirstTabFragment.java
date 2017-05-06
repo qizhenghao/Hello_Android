@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
+import android.widget.ScrollView;
 
 import com.bruce.android.knowledge.activities.CanvasActivity;
 import com.bruce.android.knowledge.activities.InternetVideoActivity;
@@ -33,12 +36,18 @@ import com.bruce.android.knowledge.fragments.test.WebView_JS_Fragment;
 import com.bruce.android.knowledge.net.demo.TestHttpActivity;
 import com.bruce.android.knowledge.services.ServiceTestActivity;
 
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
  * Created by qizhenghao on 17/3/2.
  */
 public class FirstTabFragment extends BaseFragment implements View.OnClickListener {
+
+    @BindView(R.id.scrollview)
+    public ScrollView scrollView;
 
     @Override
     protected int getLayoutId() {
@@ -47,7 +56,7 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     protected void initView() {
-
+        scrollView.setOverScrollMode(View.OVER_SCROLL_NEVER);
     }
 
     @Override
@@ -70,13 +79,18 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
         switch (view.getId()) {
             case R.id.webView_js:
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.first_tab_inner_fragment, new WebView_JS_Fragment());
+                transaction.add(R.id.first_tab_inner_fragment, new WebView_JS_Fragment());
+//                transaction.addToBackStack("");
+                ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
+                reentrantReadWriteLock.writeLock().lock();
                 transaction.commit();
 //                PropertyAnimationUtils.startAnimator(view);
 //                PropertyAnimationUtils.startAnimator1(view);
                 PropertyAnimationUtils.startAnimator2(view);
                 break;
             case R.id.process_test:
+                view.startAnimation(AnimationUtils.loadAnimation(
+                        mContext, R.anim.vc_0_0_1_newsfeed_loading_rotate));
                 startActivity(new Intent(mContext, TestProcessActivity.class));
                 break;
             case R.id.http_demo:

@@ -361,7 +361,7 @@ public class SingleTouchView extends View {
 		Drawable drawable = getContext().getResources().getDrawable(resId);
 		setImageDrawable(drawable);
 	}
-	
+
 	@Override
 	protected void onDraw(Canvas canvas) {
 		//每次draw之前调整View的位置和大小

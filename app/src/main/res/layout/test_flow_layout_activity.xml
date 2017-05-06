@@ -90,7 +90,7 @@
     </com.bruce.android.knowledge.custom_view.FlowLayout>
 
     <com.bruce.android.knowledge.custom_view.FlowLayout
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp" >
 
@@ -104,6 +104,8 @@
                 style="@style/text_flag_01"
                 android:background="@drawable/flag_03"
                 android:text="IT工程师"
+                android:layout_marginTop="120dp"
+                android:layout_marginLeft="30dp"
                 android:textColor="#43BBE7" />
 
         <TextView

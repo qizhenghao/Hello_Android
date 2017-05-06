@@ -106,4 +106,9 @@
         <item name="android:indeterminateDuration">1000</item>
         <item name="android:indeterminateDrawable">@drawable/progress_bar_anim</item>
     </style>
+
+    <declare-styleable name="ScrollOverListFooter">
+        <attr format="boolean" name="use_border"/>
+        <attr format="reference" name="footer_divider"/>
+    </declare-styleable>
 </resources>
