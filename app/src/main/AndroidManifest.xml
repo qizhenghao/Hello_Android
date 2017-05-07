@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="com.bruce.android.knowledge.MY_SERVICE_PERMISSION"/>
+    <uses-permission android:name="com.bruce.android.knowledge.TEST_AIDL_SERVICE_PERMISSION"/>
 
     <application
         android:name="com.bruce.android.knowledge.base.KnowApplication"
@@ -58,6 +59,7 @@
         <activity android:name="com.bruce.android.knowledge.activities.processTest.Process6Activity"
                   android:process=":process_6"/>
         <activity android:name=".fragments.webview_ex.WebViewExActivity"/>
+        <activity android:name=".test.aidl.TestAidlActivity"/>
 
         <service android:name="com.bruce.android.knowledge.services.MyService"
                  android:permission="com.bruce.android.knowledge.MY_SERVICE_PERMISSION">
@@ -65,5 +67,17 @@
                 <action android:name="com.test.SERVICE_TEST"/>
             </intent-filter>
         </service>
+
+        <service android:name=".test.aidl.TestAidlService"
+                 android:exported="true"
+        android:permission="com.bruce.android.knowledge.TEST_AIDL_SERVICE_PERMISSION"
+        android:process="com.bruce.android.knowledge.test_aidl"
+                >
+            <intent-filter>
+                <action android:name="com.bruce.android.knowledge.TEST_AIDL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+
     </application>
 </manifest>
