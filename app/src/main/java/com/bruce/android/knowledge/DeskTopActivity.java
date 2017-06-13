@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PersistableBundle;
 import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -85,10 +86,6 @@ public class DeskTopActivity extends FragmentActivity implements View.OnClickLis
         Log.d("Bruce", result.getWidth() + ", " + result.getHeight());
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
 
     private void initData() {
         mContext = DeskTopActivity.this;
@@ -173,4 +170,58 @@ public class DeskTopActivity extends FragmentActivity implements View.OnClickLis
 
         }
     };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("Bruce", "deskTop: onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("Bruce", "deskTop: onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("Bruce", "deskTop: onStop");
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        Log.d("Bruce", "deskTop: onSaveInstanceState");
+    }
+
+    @Override
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+        log("desktop: level = " + level);
+        switch (level) {
+            case TRIM_MEMORY_RUNNING_MODERATE:
+                break;
+            case TRIM_MEMORY_RUNNING_LOW:
+                break;
+            case TRIM_MEMORY_RUNNING_CRITICAL:
+
+                break;
+            case TRIM_MEMORY_UI_HIDDEN:
+                break;
+            case TRIM_MEMORY_BACKGROUND:
+
+                break;
+            case TRIM_MEMORY_MODERATE:
+
+                break;
+            case TRIM_MEMORY_COMPLETE:
+
+                break;
+        }
+    }
+
+    private void log(String s) {
+        Log.d("Bruce", s);
+    }
 }

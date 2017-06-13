@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -156,4 +158,27 @@ public class TestHttpActivity extends Activity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("Bruce", "test: onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("Bruce", "test: onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("Bruce", "test: onStop");
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        Log.d("Bruce", "test: onSaveInstanceState");
+    }
 }

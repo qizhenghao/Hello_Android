@@ -6,10 +6,13 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.SweepGradient;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
+
+import com.bruce.android.knowledge.R;
 
 public class CanvasActivity extends Activity {
     private DisplayMetrics displayMetrics;
@@ -63,6 +66,23 @@ public class CanvasActivity extends Activity {
             canvas.drawRect(20, 70, 70, 120, paint);
             // 画一个长方形
             canvas.drawRect(20, 170, 90, 230, paint);
+
+            //画渐变弧度
+            RectF rectF = new RectF(20f, 250f, 200f, 430f);
+            float startAngle = 135f, sweepAngle = 270;
+            Paint sweepPaint = new Paint();
+            sweepPaint.setAntiAlias(true);
+            sweepPaint.setStyle(Paint.Style.STROKE);
+            sweepPaint.setStrokeCap(Paint.Cap.ROUND);
+            sweepPaint.setStrokeWidth(50);
+            sweepPaint.setColor(getResources().getColor(R.color.green));
+            sweepPaint.setShader(null);
+            canvas.drawArc(rectF, startAngle+120, sweepAngle-120, false, sweepPaint);
+
+            SweepGradient sweepGradient = new SweepGradient(110, 340, new int[] {Color.CYAN,Color.DKGRAY,Color.GRAY,Color.LTGRAY,Color.MAGENTA,
+                    Color.GREEN,Color.TRANSPARENT, Color.BLUE }, null);
+            sweepPaint.setShader(sweepGradient);
+            canvas.drawArc(rectF, startAngle, sweepAngle - 120, false, sweepPaint);
 
 //            int padding = 20;
 //            int r = displayMetrics.widthPixels - padding * 2;
