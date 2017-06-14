@@ -11,10 +11,14 @@ import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.text.Editable;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
+import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.BackgroundColorSpan;
@@ -33,8 +37,12 @@ import android.text.style.TypefaceSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import butterknife.OnClick;
+import butterknife.OnTextChanged;
 
 public class TextViewLinkActivity extends Activity {
     TextView mTextView = null;   
@@ -43,6 +51,7 @@ public class TextViewLinkActivity extends Activity {
     SpannableString msp = null;
     SpannableString msp1 = null;
 
+    boolean isFilter = false;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -186,5 +195,41 @@ public class TextViewLinkActivity extends Activity {
 //        mTextView1.setMovementMethod(LinkMovementMethod.getInstance());
 
         mTextView2.setText(Html.fromHtml(getString(R.string.live_video_need_bind_idcard)));
+
+
+        final EditText editText = (EditText) findViewById(R.id.test_input_filter_edit);
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!isFilter) {
+                    isFilter = true;
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            isFilter = false;
+                            Toast.makeText(TextViewLinkActivity.this, "去搜索" + editText.getText().toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }, 500);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
+
+    private static Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+        }
+    };
 }

@@ -38,6 +38,7 @@ public class WebView_JS_Fragment extends BaseFragment {
         mWebView.loadUrl("file:///android_asset/html/webview2js.html");
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+//        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);//对应于js函数的window.open
         mWebView.setWebChromeClient(new WebChromeClient());
         mWebView.addJavascriptInterface(this, "toast");
     }
