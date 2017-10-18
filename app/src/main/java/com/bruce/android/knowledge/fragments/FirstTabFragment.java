@@ -12,6 +12,7 @@ import com.bruce.android.knowledge.activities.CanvasActivity;
 import com.bruce.android.knowledge.activities.InternetVideoActivity;
 import com.bruce.android.knowledge.activities.TestCircleMenuActivity;
 import com.bruce.android.knowledge.activities.TestClipActivity;
+import com.bruce.android.knowledge.activities.TestCoordinatorActivity;
 import com.bruce.android.knowledge.activities.TestCosAnimationActivity;
 import com.bruce.android.knowledge.activities.TestCustomViewGroupActivity;
 import com.bruce.android.knowledge.activities.TestFlowLayoutActivity;
@@ -75,9 +76,12 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
 
     }
 
-    @OnClick({R.id.test_aidl, R.id.webView_js, R.id.process_test, R.id.http_demo, R.id.service_demo, R.id.main_open_test_ImageView_btn, R.id.main_open_test_pinned_btn, R.id.main_open_test_clip_btn, R.id.main_open_test_lineview_btn, R.id.main_open_test_VideoView_btn, R.id.main_open_test_muti_iv_btn, R.id.main_open_test_CircleMenu_btn, R.id.main_open_test_slideviewpager_btn, R.id.main_open_test_popupwindow_dialog_btn, R.id.main_open_test_tween_animation_btn, R.id.main_open_test_shader_btn, R.id.main_open_test_canvas_btn, R.id.main_open_test_custom_viewgroup_btn, R.id.main_open_test_flowlayout_btn, R.id.main_open_textviewlink_btn, R.id.main_open_rotation_text_btn, R.id.main_open_transform_matrix_btn, R.id.main_open_single_touch_btn, R.id.main_open_cos_animation_btn, R.id.main_open_scan_animation1_btn, R.id.main_open_scan_animation_btn})
+    @OnClick({R.id.test_CoordinatorLayout, R.id.test_aidl, R.id.webView_js, R.id.process_test, R.id.http_demo, R.id.service_demo, R.id.main_open_test_ImageView_btn, R.id.main_open_test_pinned_btn, R.id.main_open_test_clip_btn, R.id.main_open_test_lineview_btn, R.id.main_open_test_VideoView_btn, R.id.main_open_test_muti_iv_btn, R.id.main_open_test_CircleMenu_btn, R.id.main_open_test_slideviewpager_btn, R.id.main_open_test_popupwindow_dialog_btn, R.id.main_open_test_tween_animation_btn, R.id.main_open_test_shader_btn, R.id.main_open_test_canvas_btn, R.id.main_open_test_custom_viewgroup_btn, R.id.main_open_test_flowlayout_btn, R.id.main_open_textviewlink_btn, R.id.main_open_rotation_text_btn, R.id.main_open_transform_matrix_btn, R.id.main_open_single_touch_btn, R.id.main_open_cos_animation_btn, R.id.main_open_scan_animation1_btn, R.id.main_open_scan_animation_btn})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.test_CoordinatorLayout:
+                startActivity(new Intent(mContext, TestCoordinatorActivity.class));
+                break;
             case R.id.test_aidl:
                 startActivity(new Intent(mContext, TestAidlActivity.class));
                 break;

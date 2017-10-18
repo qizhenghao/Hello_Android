@@ -60,6 +60,8 @@
                   android:process=":process_6"/>
         <activity android:name=".fragments.webview_ex.WebViewExActivity"/>
         <activity android:name=".test.aidl.TestAidlActivity"/>
+        <activity android:name=".activities.TestCoordinatorActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <service android:name="com.bruce.android.knowledge.services.MyService"
                  android:permission="com.bruce.android.knowledge.MY_SERVICE_PERMISSION">

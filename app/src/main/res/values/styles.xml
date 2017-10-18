@@ -2,6 +2,7 @@
 <resources>
 
     <style name="app_theme" parent="@android:style/Theme.Light.NoTitleBar">
+    <!--<style name="app_theme" parent="@style/Theme.AppCompat.Light.NoActionBar">-->
         <!--<item name="android:background">@color/white</item>-->
     </style>
     <style name="text_flag_01">

@@ -56,4 +56,10 @@
     <color name="gold_60">#ffd600</color>
     <color name="profile_watch">#ffda19</color>
     <color name="profile_both_watch">#d4d7d9</color>
+
+    <!--swipe refresh color-->
+    <color name="swipe_color_1">#40ffd600</color>
+    <color name="swipe_color_2">#80ffd600</color>
+    <color name="swipe_color_3">#C0ffd600</color>
+    <color name="swipe_color_4">#ffd600</color>
 </resources>
