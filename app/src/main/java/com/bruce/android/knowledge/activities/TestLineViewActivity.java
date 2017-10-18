@@ -32,14 +32,24 @@ public class TestLineViewActivity extends Activity {
                 startAnimator();
             }
         });
+
         lineView = (LineView) findViewById(R.id.lineView);
+
+        lineView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                Log.d("Bruce", "lineView global width = " + lineView.getWidth());
+            }
+        });
+
         lineView1 = (LineView) findViewById(R.id.lineView1);
+
         ViewTreeObserver observer = lineView.getViewTreeObserver();
         observer.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
             @Override
             public boolean onPreDraw() {
                 width = lineView.getMeasuredWidth();
-                Log.d("Bruce", "width:" + width);
+                Log.d("Bruce", "lineView draw-- width = " + width);
                 return true;
             }
         });
