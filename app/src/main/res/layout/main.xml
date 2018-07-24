@@ -17,6 +17,22 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <Button
+                android:id="@+id/test_dialog_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:onClick="onClick"
+                android:text="test_dialog_activity"/>
+            <Button
+                android:id="@+id/test_file_path"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:onClick="onClick"
+                android:text="test_file_path"/>
+            <Button
                 android:id="@+id/test_CoordinatorLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

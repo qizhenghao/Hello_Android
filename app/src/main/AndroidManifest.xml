@@ -4,10 +4,21 @@
     android:versionCode="1"
     android:versionName="1.0">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="com.bruce.android.knowledge.MY_SERVICE_PERMISSION"/>
     <uses-permission android:name="com.bruce.android.knowledge.TEST_AIDL_SERVICE_PERMISSION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
 
     <application
         android:name="com.bruce.android.knowledge.base.KnowApplication"
@@ -62,6 +73,9 @@
         <activity android:name=".test.aidl.TestAidlActivity"/>
         <activity android:name=".activities.TestCoordinatorActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".activities.wifiTest.TestDialogActivity"
+            android:theme="@style/DialogActivity"/>
+
 
         <service android:name="com.bruce.android.knowledge.services.MyService"
                  android:permission="com.bruce.android.knowledge.MY_SERVICE_PERMISSION">
@@ -80,6 +94,12 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </service>
+
+        <receiver android:name=".receivers.MediaButtonReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
 
     </application>
 </manifest>

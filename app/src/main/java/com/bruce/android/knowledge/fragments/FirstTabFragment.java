@@ -1,7 +1,12 @@
 package com.bruce.android.knowledge.fragments;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.os.Environment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -27,14 +32,17 @@ import com.bruce.android.knowledge.activities.TestTransformMatrixActivity;
 import com.bruce.android.knowledge.activities.TextViewLinkActivity;
 import com.bruce.android.knowledge.activities.processTest.TestProcessActivity;
 import com.bruce.android.knowledge.R;
+import com.bruce.android.knowledge.activities.wifiTest.TestDialogActivity;
 import com.bruce.android.knowledge.animation.property.PropertyAnimationUtils;
 import com.bruce.android.knowledge.costomviewdemos.DemoPopupWindow;
 import com.bruce.android.knowledge.custom_view.tween_animation.TestTweenAnimationActivity;
 import com.bruce.android.knowledge.custom_view.pinnedHeaderListView.TestPinnedHeaderListViewActivity;
 import com.bruce.android.knowledge.custom_view.scanAnimation.ParabolaAnimationActivity;
 import com.bruce.android.knowledge.custom_view.scanAnimation.ScanAnimationActivity;
+import com.bruce.android.knowledge.fragments.test.FilePathFragment;
 import com.bruce.android.knowledge.fragments.test.WebView_JS_Fragment;
 import com.bruce.android.knowledge.net.demo.TestHttpActivity;
+import com.bruce.android.knowledge.receivers.MediaButtonReceiver;
 import com.bruce.android.knowledge.services.ServiceTestActivity;
 import com.bruce.android.knowledge.test.aidl.TestAidlActivity;
 
@@ -51,6 +59,9 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
     @BindView(R.id.scrollview)
     public ScrollView scrollView;
 
+    AudioManager mAudioManager;
+    ComponentName mComponent;
+
     @Override
     protected int getLayoutId() {
         return R.layout.main;
@@ -64,6 +75,19 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
     @Override
     protected void initData() {
 
+        mAudioManager = (AudioManager) mActivity.getSystemService(Context.AUDIO_SERVICE);
+        //构造一个ComponentName，指向MediaoButtonReceiver类
+        mComponent = new ComponentName(mActivity.getPackageName(), MediaButtonReceiver.class.getName());
+
+//注册一个MediaButtonReceiver广播监听
+        mAudioManager.registerMediaButtonEventReceiver(mComponent);
+
+        Log.d("bruce", defaultUserAgent());
+    }
+
+    private String defaultUserAgent() {
+        String agent = System.getProperty("http.agent");
+        return agent != null ? agent : "Dalvik/2.1.0 (Linux; U; Android 5.0; SM-G9006V Build/LRX21T)";
     }
 
     @Override
@@ -76,9 +100,23 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
 
     }
 
-    @OnClick({R.id.test_CoordinatorLayout, R.id.test_aidl, R.id.webView_js, R.id.process_test, R.id.http_demo, R.id.service_demo, R.id.main_open_test_ImageView_btn, R.id.main_open_test_pinned_btn, R.id.main_open_test_clip_btn, R.id.main_open_test_lineview_btn, R.id.main_open_test_VideoView_btn, R.id.main_open_test_muti_iv_btn, R.id.main_open_test_CircleMenu_btn, R.id.main_open_test_slideviewpager_btn, R.id.main_open_test_popupwindow_dialog_btn, R.id.main_open_test_tween_animation_btn, R.id.main_open_test_shader_btn, R.id.main_open_test_canvas_btn, R.id.main_open_test_custom_viewgroup_btn, R.id.main_open_test_flowlayout_btn, R.id.main_open_textviewlink_btn, R.id.main_open_rotation_text_btn, R.id.main_open_transform_matrix_btn, R.id.main_open_single_touch_btn, R.id.main_open_cos_animation_btn, R.id.main_open_scan_animation1_btn, R.id.main_open_scan_animation_btn})
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mAudioManager.unregisterMediaButtonEventReceiver(mComponent);
+    }
+
+    @OnClick({R.id.test_dialog_activity, R.id.test_file_path, R.id.test_CoordinatorLayout, R.id.test_aidl, R.id.webView_js, R.id.process_test, R.id.http_demo, R.id.service_demo, R.id.main_open_test_ImageView_btn, R.id.main_open_test_pinned_btn, R.id.main_open_test_clip_btn, R.id.main_open_test_lineview_btn, R.id.main_open_test_VideoView_btn, R.id.main_open_test_muti_iv_btn, R.id.main_open_test_CircleMenu_btn, R.id.main_open_test_slideviewpager_btn, R.id.main_open_test_popupwindow_dialog_btn, R.id.main_open_test_tween_animation_btn, R.id.main_open_test_shader_btn, R.id.main_open_test_canvas_btn, R.id.main_open_test_custom_viewgroup_btn, R.id.main_open_test_flowlayout_btn, R.id.main_open_textviewlink_btn, R.id.main_open_rotation_text_btn, R.id.main_open_transform_matrix_btn, R.id.main_open_single_touch_btn, R.id.main_open_cos_animation_btn, R.id.main_open_scan_animation1_btn, R.id.main_open_scan_animation_btn})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.test_dialog_activity:
+                startActivity(new Intent(getContext(), TestDialogActivity.class));
+                break;
+            case R.id.test_file_path:
+                FragmentTransaction transaction1 = getFragmentManager().beginTransaction();
+                transaction1.add(R.id.first_tab_inner_fragment, new FilePathFragment());
+                transaction1.commit();
+                break;
             case R.id.test_CoordinatorLayout:
                 startActivity(new Intent(mContext, TestCoordinatorActivity.class));
                 break;

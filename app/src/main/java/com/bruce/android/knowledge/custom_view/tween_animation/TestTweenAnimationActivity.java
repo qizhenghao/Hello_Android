@@ -75,9 +75,11 @@ public class TestTweenAnimationActivity extends Activity implements View.OnClick
 
             case R.id.rotateAnimation:
                 Log.e("Tween", "onKeyDown - KEYCODE_DPAD_DOWN");
-                rotateAnimation = new RotateAnimation(0f, 360f);
+                float x = 0.5f;
+                float y = 0.5f;
+                rotateAnimation = new RotateAnimation(0f, 360f, 300, 20f);
                 rotateAnimation.setDuration(1000);
-//                imageView.startAnimation(rotateAnimation);
+                findViewById(R.id.scaleAnimation).startAnimation(rotateAnimation);
                 break;
 
             case R.id.scaleAnimation:

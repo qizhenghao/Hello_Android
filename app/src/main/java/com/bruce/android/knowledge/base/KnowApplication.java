@@ -22,9 +22,13 @@ public class KnowApplication extends Application {
 
     public static final String TAG = "KnowApplication";
 
+    public static KnowApplication context = null;
+    public static boolean sWaitingSpecifiedWifiConnected;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        context = this;
         Log.d(TAG, "currentThread().getId() = " + Thread.currentThread().getId() + "");
 //        initNotification();
     }

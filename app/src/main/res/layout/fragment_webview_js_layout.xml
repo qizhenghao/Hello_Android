@@ -8,8 +8,8 @@
         android:id="@+id/native2H5_btn"
         android:layout_gravity="center_horizontal"
         android:text="Native调用H5的js方法"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <WebView
         android:id="@+id/fragment_webview_js_wb"
         android:layout_width="match_parent"
