@@ -20,7 +20,9 @@ import com.bruce.android.knowledge.activities.TestClipActivity;
 import com.bruce.android.knowledge.activities.TestCoordinatorActivity;
 import com.bruce.android.knowledge.activities.TestCosAnimationActivity;
 import com.bruce.android.knowledge.activities.TestCustomViewGroupActivity;
+import com.bruce.android.knowledge.activities.TestEndCallActivity;
 import com.bruce.android.knowledge.activities.TestFlowLayoutActivity;
+import com.bruce.android.knowledge.activities.TestGattServerActivity;
 import com.bruce.android.knowledge.activities.TestImageViewActivity;
 import com.bruce.android.knowledge.activities.TestLineViewActivity;
 import com.bruce.android.knowledge.activities.TestMultiImageViewActivity;
@@ -43,6 +45,7 @@ import com.bruce.android.knowledge.fragments.test.FilePathFragment;
 import com.bruce.android.knowledge.fragments.test.WebView_JS_Fragment;
 import com.bruce.android.knowledge.net.demo.TestHttpActivity;
 import com.bruce.android.knowledge.receivers.MediaButtonReceiver;
+import com.bruce.android.knowledge.services.ReadNotifyActivity;
 import com.bruce.android.knowledge.services.ServiceTestActivity;
 import com.bruce.android.knowledge.test.aidl.TestAidlActivity;
 
@@ -106,9 +109,18 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
         mAudioManager.unregisterMediaButtonEventReceiver(mComponent);
     }
 
-    @OnClick({R.id.test_dialog_activity, R.id.test_file_path, R.id.test_CoordinatorLayout, R.id.test_aidl, R.id.webView_js, R.id.process_test, R.id.http_demo, R.id.service_demo, R.id.main_open_test_ImageView_btn, R.id.main_open_test_pinned_btn, R.id.main_open_test_clip_btn, R.id.main_open_test_lineview_btn, R.id.main_open_test_VideoView_btn, R.id.main_open_test_muti_iv_btn, R.id.main_open_test_CircleMenu_btn, R.id.main_open_test_slideviewpager_btn, R.id.main_open_test_popupwindow_dialog_btn, R.id.main_open_test_tween_animation_btn, R.id.main_open_test_shader_btn, R.id.main_open_test_canvas_btn, R.id.main_open_test_custom_viewgroup_btn, R.id.main_open_test_flowlayout_btn, R.id.main_open_textviewlink_btn, R.id.main_open_rotation_text_btn, R.id.main_open_transform_matrix_btn, R.id.main_open_single_touch_btn, R.id.main_open_cos_animation_btn, R.id.main_open_scan_animation1_btn, R.id.main_open_scan_animation_btn})
+    @OnClick({R.id.TestGattServerActivity, R.id.TestEndCallActivity, R.id.test_read_notify_activity, R.id.test_dialog_activity, R.id.test_file_path, R.id.test_CoordinatorLayout, R.id.test_aidl, R.id.webView_js, R.id.process_test, R.id.http_demo, R.id.service_demo, R.id.main_open_test_ImageView_btn, R.id.main_open_test_pinned_btn, R.id.main_open_test_clip_btn, R.id.main_open_test_lineview_btn, R.id.main_open_test_VideoView_btn, R.id.main_open_test_muti_iv_btn, R.id.main_open_test_CircleMenu_btn, R.id.main_open_test_slideviewpager_btn, R.id.main_open_test_popupwindow_dialog_btn, R.id.main_open_test_tween_animation_btn, R.id.main_open_test_shader_btn, R.id.main_open_test_canvas_btn, R.id.main_open_test_custom_viewgroup_btn, R.id.main_open_test_flowlayout_btn, R.id.main_open_textviewlink_btn, R.id.main_open_rotation_text_btn, R.id.main_open_transform_matrix_btn, R.id.main_open_single_touch_btn, R.id.main_open_cos_animation_btn, R.id.main_open_scan_animation1_btn, R.id.main_open_scan_animation_btn})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.TestGattServerActivity:
+                startActivity(new Intent(getContext(), TestGattServerActivity.class));
+                break;
+            case R.id.TestEndCallActivity:
+                startActivity(new Intent(getContext(), TestEndCallActivity.class));
+                break;
+            case R.id.test_read_notify_activity:
+                startActivity(new Intent(getContext(), ReadNotifyActivity.class));
+                break;
             case R.id.test_dialog_activity:
                 startActivity(new Intent(getContext(), TestDialogActivity.class));
                 break;

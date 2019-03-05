@@ -17,6 +17,30 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <Button
+                android:id="@+id/TestGattServerActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:onClick="onClick"
+                android:text="TestGattServerActivity"/>
+            <Button
+                android:id="@+id/TestEndCallActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:onClick="onClick"
+                android:text="TestEndCallActivity"/>
+            <Button
+                android:id="@+id/test_read_notify_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:onClick="onClick"
+                android:text="test_read_notify_activity"/>
+            <Button
                 android:id="@+id/test_dialog_activity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
