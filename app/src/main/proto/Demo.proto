@@ -1,0 +1,30 @@
+syntax = "proto3";
+option java_package = "com.bruce.android.knowledge.bean";
+
+message SearchRequest {
+    string query = 1; //注释
+    int32 page_number = 2;
+    int32 result_per_page = 3;
+    enum Corpus {
+        UNIVERSAL = 0;
+        WEB = 1;
+        IMAGES = 2;
+        LOCAL = 3;
+        NEWS = 4;
+        PRODUCTS = 5;
+        VIDEO = 6;
+    }
+    Corpus corpus = 4;
+}
+
+message SearchResponse {
+    int32 page_number = 1;
+    string key = 3;
+    repeated SearchItem search_items = 2;
+}
+
+message SearchItem {
+    int32 id = 1;
+    string title = 2;
+    string content = 3;
+}

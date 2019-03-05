@@ -25,6 +25,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.bruce.android.knowledge.bean.Demo;
+import com.google.protobuf.InvalidProtocolBufferException;
+
+import java.util.Arrays;
 import java.util.UUID;
 
 /**
@@ -57,6 +61,29 @@ public class TestGattServerActivity extends Activity {
                 startAdvertising();
             }
         });
+
+        Demo.SearchResponse.Builder responseBuilder = Demo.SearchResponse.newBuilder();
+        responseBuilder.setPageNumber(110);
+        responseBuilder.setKey("测试");
+        for (int i = 0; i < 3; i++) {
+            Demo.SearchItem.Builder itemBuilder = Demo.SearchItem.newBuilder();
+            itemBuilder.setId(1000 + i).setTitle("title").setContent("content");
+            responseBuilder.addSearchItems(itemBuilder.build());
+        }
+
+        //序列化
+        Demo.SearchResponse searchResponse = responseBuilder.build();
+        Log.i("Bruce", searchResponse.toString());
+        Log.i("Bruce", Arrays.toString(searchResponse.toByteArray()));
+
+        //反序列化
+        try {
+            byte[] responseBytes = searchResponse.toByteArray();
+            Demo.SearchResponse searchResponse1 = Demo.SearchResponse.parseFrom(responseBytes);
+            Log.i("Bruce", searchResponse1.toString());
+        } catch (InvalidProtocolBufferException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
