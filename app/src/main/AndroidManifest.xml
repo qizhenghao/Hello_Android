@@ -1,127 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bruce.android.knowledge"
-    android:versionCode="1"
-    android:versionName="1.0">
+<manifest package="com.bruce.android.knowledge"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:versionCode="1"
+          android:versionName="1.0">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="com.bruce.android.knowledge.MY_SERVICE_PERMISSION"/>
     <uses-permission android:name="com.bruce.android.knowledge.TEST_AIDL_SERVICE_PERMISSION"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" >
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE">
     </uses-permission>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
-    </uses-permission>
-
-    <!-- endCall-->
-    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
-    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
-    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
-
-    <!-- GATT Server-->
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE">
+    </uses-permission> <!-- endCall -->
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PRIVILEGED"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"/>
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS"/> <!-- GATT Server -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
-        android:name="com.bruce.android.knowledge.base.KnowApplication"
-        android:icon="@drawable/ic_launcher"
+        android:name=".base.KnowApplication"
         android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/app_theme">
         <activity
-            android:name="com.bruce.android.knowledge.DeskTopActivity"
+            android:name=".DeskTopActivity"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.bruce.android.knowledge.activities.TestShaderActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.CanvasActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestCustomViewGroupActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestFlowLayoutActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TextViewLinkActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestRotationTextViewActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestTransformMatrixActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestSingleTouchActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestCosAnimationActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestSlideViewPagerActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestCircleMenuActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestMultiImageViewActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.InternetVideoActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestLineViewActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestClipActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.TestImageViewActivity"/>
-        <activity android:name="com.bruce.android.knowledge.custom_view.scanAnimation.ParabolaAnimationActivity"/>
-        <activity android:name="com.bruce.android.knowledge.custom_view.scanAnimation.ScanAnimationActivity"/>
-        <activity android:name="com.bruce.android.knowledge.custom_view.tween_animation.TestTweenAnimationActivity"/>
-        <activity android:name="com.bruce.android.knowledge.custom_view.pinnedHeaderListView.TestPinnedHeaderListViewActivity"/>
-        <activity android:name="com.bruce.android.knowledge.services.ServiceTestActivity"/>
-        <activity android:name="com.bruce.android.knowledge.net.demo.TestHttpActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.processTest.TestProcessActivity"/>
-        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process1Activity"
+        <activity android:name=".activities.TestShaderActivity"/>
+        <activity android:name=".activities.CanvasActivity"/>
+        <activity android:name=".activities.TestCustomViewGroupActivity"/>
+        <activity android:name=".activities.TestFlowLayoutActivity"/>
+        <activity android:name=".activities.TextViewLinkActivity"/>
+        <activity android:name=".activities.TestRotationTextViewActivity"/>
+        <activity android:name=".activities.TestTransformMatrixActivity"/>
+        <activity android:name=".activities.TestSingleTouchActivity"/>
+        <activity android:name=".activities.TestCosAnimationActivity"/>
+        <activity android:name=".activities.TestSlideViewPagerActivity"/>
+        <activity android:name=".activities.TestCircleMenuActivity"/>
+        <activity android:name=".activities.TestMultiImageViewActivity"/>
+        <activity android:name=".activities.InternetVideoActivity"/>
+        <activity android:name=".activities.TestLineViewActivity"/>
+        <activity android:name=".activities.TestClipActivity"/>
+        <activity android:name=".activities.TestImageViewActivity"/>
+        <activity android:name=".custom_view.scanAnimation.ParabolaAnimationActivity"/>
+        <activity android:name=".custom_view.scanAnimation.ScanAnimationActivity"/>
+        <activity android:name=".custom_view.tween_animation.TestTweenAnimationActivity"/>
+        <activity android:name=".custom_view.pinnedHeaderListView.TestPinnedHeaderListViewActivity"/>
+        <activity android:name=".services.ServiceTestActivity"/>
+        <activity android:name=".net.demo.TestHttpActivity"/>
+        <activity android:name=".activities.processTest.TestProcessActivity"/>
+        <activity
+            android:name=".activities.processTest.Process1Activity"
             android:process=":process_1"/>
-        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process2Activity"
-                  android:process=":process_2"/>
-        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process3Activity"
-                  android:process=":process_3"/>
-        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process4Activity"
-                  android:process=":process_4"/>
-        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process5Activity"
-                  android:process=":process_5"/>
-        <activity android:name="com.bruce.android.knowledge.activities.processTest.Process6Activity"
-                  android:process=":process_6"/>
+        <activity
+            android:name=".activities.processTest.Process2Activity"
+            android:process=":process_2"/>
+        <activity
+            android:name=".activities.processTest.Process3Activity"
+            android:process=":process_3"/>
+        <activity
+            android:name=".activities.processTest.Process4Activity"
+            android:process=":process_4"/>
+        <activity
+            android:name=".activities.processTest.Process5Activity"
+            android:process=":process_5"/>
+        <activity
+            android:name=".activities.processTest.Process6Activity"
+            android:process=":process_6"/>
         <activity android:name=".fragments.webview_ex.WebViewExActivity"/>
         <activity android:name=".test.aidl.TestAidlActivity"/>
-        <activity android:name=".activities.TestCoordinatorActivity"
+        <activity
+            android:name=".activities.TestCoordinatorActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".activities.wifiTest.TestDialogActivity"
+        <activity
+            android:name=".activities.wifiTest.TestDialogActivity"
             android:theme="@style/DialogActivity"/>
         <activity android:name=".services.ReadNotifyActivity"/>
         <activity android:name=".activities.TestEndCallActivity"/>
         <activity android:name=".activities.TestGattServerActivity"/>
 
-
-        <service android:name="com.bruce.android.knowledge.services.MyService"
-                 android:permission="com.bruce.android.knowledge.MY_SERVICE_PERMISSION">
+        <service
+            android:name=".services.MyService"
+            android:permission="com.bruce.android.knowledge.MY_SERVICE_PERMISSION">
             <intent-filter>
                 <action android:name="com.test.SERVICE_TEST"/>
             </intent-filter>
         </service>
-
-        <service android:name=".test.aidl.TestAidlService"
-                 android:exported="true"
-        android:permission="com.bruce.android.knowledge.TEST_AIDL_SERVICE_PERMISSION"
-        android:process="com.bruce.android.knowledge.test_aidl"
-                >
+        <service
+            android:name=".test.aidl.TestAidlService"
+            android:exported="true"
+            android:permission="com.bruce.android.knowledge.TEST_AIDL_SERVICE_PERMISSION"
+            android:process="com.bruce.android.knowledge.test_aidl">
             <intent-filter>
                 <action android:name="com.bruce.android.knowledge.TEST_AIDL"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </service>
-
         <service
             android:name=".services.ReadNotifiService"
-            android:priority="1000"
             android:label="通知监控"
-            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
-        <intent-filter>
-            <action      android:name="android.service.notification.NotificationListenerService" />
-        </intent-filter>
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:priority="1000">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
         </service>
 
         <receiver android:name=".receivers.MediaButtonReceiver">
@@ -129,6 +132,6 @@
                 <action android:name="android.intent.action.MEDIA_BUTTON"/>
             </intent-filter>
         </receiver>
-
     </application>
+
 </manifest>
