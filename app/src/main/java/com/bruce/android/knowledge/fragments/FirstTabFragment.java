@@ -48,6 +48,8 @@ import com.bruce.android.knowledge.receivers.MediaButtonReceiver;
 import com.bruce.android.knowledge.services.ReadNotifyActivity;
 import com.bruce.android.knowledge.services.ServiceTestActivity;
 import com.bruce.android.knowledge.test.aidl.TestAidlActivity;
+import com.bruce.android.knowledge.utils.LocalNotificationHelper;
+import com.bruce.android.knowledge.utils.SystemAlarmUtil;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -113,7 +115,10 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.TestGattServerActivity:
-                startActivity(new Intent(getContext(), TestGattServerActivity.class));
+                SystemAlarmUtil.createByAlarmManager(getContext());
+//                LocalNotificationHelper.sendNotification(mActivity);
+//                SystemAlarmUtil.createAlarm(getContext(), "测试闹钟", 14, 47, 0);
+//                startActivity(new Intent(getContext(), TestGattServerActivity.class));
                 break;
             case R.id.TestEndCallActivity:
                 startActivity(new Intent(getContext(), TestEndCallActivity.class));
