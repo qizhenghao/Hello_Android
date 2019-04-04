@@ -93,8 +93,8 @@ public class DeskTopActivity extends FragmentActivity implements View.OnClickLis
         secondTabFragment = new SecondTabFragment();
         thirdTabFragment = new ThirdTabFragment();
         fragmentList = new ArrayList<BaseFragment>();
-        fragmentList.add(firstTabFragment);
         fragmentList.add(secondTabFragment);
+        fragmentList.add(firstTabFragment);
         fragmentList.add(thirdTabFragment);
 
         viewPagerAdapter = new BaseFramentPagerAdapter(getSupportFragmentManager(), fragmentList);

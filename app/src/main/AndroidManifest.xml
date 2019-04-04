@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.bruce.android.knowledge"
+<manifest xmlns:tools="http://schemas.android.com/tools"
+          package="com.bruce.android.knowledge"
           xmlns:android="http://schemas.android.com/apk/res/android"
           android:versionCode="1"
           android:versionName="1.0">
@@ -33,12 +34,24 @@
 
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
+    <!--银行卡识别-->
+    <!-- Permission to vibrate - recommended, allows vibration feedback on scan -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Permission to use camera - required -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Camera features - recommended -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+
     <application
         android:name=".base.KnowApplication"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/app_theme">
+        android:theme="@style/app_theme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".DeskTopActivity"
             android:label="@string/app_name">
@@ -134,6 +147,14 @@
                 <action android:name="android.intent.action.MEDIA_BUTTON"/>
             </intent-filter>
         </receiver>
+
+        <!-- 银行卡识别-->
+        <activity android:name="io.card.payment.CardIOActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="io.card.payment.DataEntryActivity" />
+        <activity android:name=".activities.TestCardActivity"/>
+
+
     </application>
 
 </manifest>

@@ -4,13 +4,11 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
-import android.os.Environment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AnimationUtils;
-import android.view.animation.RotateAnimation;
 import android.widget.ScrollView;
 
 import com.bruce.android.knowledge.activities.CanvasActivity;
@@ -48,8 +46,6 @@ import com.bruce.android.knowledge.receivers.MediaButtonReceiver;
 import com.bruce.android.knowledge.services.ReadNotifyActivity;
 import com.bruce.android.knowledge.services.ServiceTestActivity;
 import com.bruce.android.knowledge.test.aidl.TestAidlActivity;
-import com.bruce.android.knowledge.utils.LocalNotificationHelper;
-import com.bruce.android.knowledge.utils.SystemAlarmUtil;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -69,7 +65,7 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     protected int getLayoutId() {
-        return R.layout.main;
+        return R.layout.fragment_first_tab;
     }
 
     @Override
@@ -115,10 +111,10 @@ public class FirstTabFragment extends BaseFragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.TestGattServerActivity:
-                SystemAlarmUtil.createByAlarmManager(getContext());
+//                SystemAlarmUtil.createByAlarmManager(getContext());
 //                LocalNotificationHelper.sendNotification(mActivity);
 //                SystemAlarmUtil.createAlarm(getContext(), "测试闹钟", 14, 47, 0);
-//                startActivity(new Intent(getContext(), TestGattServerActivity.class));
+                startActivity(new Intent(getContext(), TestGattServerActivity.class));
                 break;
             case R.id.TestEndCallActivity:
                 startActivity(new Intent(getContext(), TestEndCallActivity.class));
